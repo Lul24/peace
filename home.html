@@ -1,0 +1,147 @@
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<div class="hero-section">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/education-banner.jpg" class="d-block w-100" alt="Empowering Education">
+        <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+          <h2>Empowering Education</h2>
+          <p>Providing learning opportunities to underprivileged children across rural regions.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/health.jpg" class="d-block w-100" alt="Accessible Healthcare">
+        <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+          <h2> Sustainability</h2>
+          <p>focus on improving water access, conserving biodiversity, and supporting sustainable agriculture, particularly in the context of refugee populations and the region's rich natural resources. Key initiatives include transitioning from emergency water supply to sustainable infrastructure, strengthening local water utilities, and implementing conservation measures to protect wildlife and ecosystems</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/live.jpg" class="d-block w-100" alt="Sustainable Livestock">
+        <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+          <h2>Sustainable Livestock</h2>
+          <p>Fostering agriculture and livestock farming to empower rural families.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="text-center py-5 bg-light" data-aos="zoom-in">
+  <h1 class="display-5 fw-bold">Welcome Thon Met Peace Foundation, Inc</h1>
+  <p class="lead">Empowering communities through education, healthcare, and sustainable livestock development.</p>
+  <a href="#" class="btn btn-primary btn-lg mt-3" onclick="loadPage('donate.html')">Support Our Mission</a>
+</div>
+
+<!-- Services Section -->
+<section class="container py-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card h-100 shadow border-0">
+        <div class="card-body">
+          <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
+          <h5 class="card-title">Education for All</h5>
+          <p class="card-text">We build schools and provide learning materials to support children's education in underprivileged areas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card h-100 shadow border-0">
+        <div class="card-body">
+          <i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+          <h5 class="card-title">Sustainability</h5>
+          <p class="card-text">focus on improving water access, conserving biodiversity, and supporting sustainable agriculture, particularly in the context of refugee populations and the region's rich natural resources. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="card h-100 shadow border-0">
+        <div class="card-body">
+          <i class="fas fa-tractor fa-3x text-success mb-3"></i>
+          <h5 class="card-title">Livestock Support</h5>
+          <p class="card-text">We provide training and resources for sustainable livestock farming to boost rural economies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+      <img src="images/s1.jpg" class="img-fluid rounded shadow" alt="Our Work">
+    </div>
+    <div class="col-md-6" data-aos="fade-left">
+      <h2 class="fw-bold">About Thon Met Peace Foundation</h2>
+      <p class="mb-4">Met Peace Foundation is a nonprofit organization committed to uplifting communities through targeted initiatives that address the root causes of poverty and underdevelopment. We work in education, healthcare, and agriculture to create a holistic impact.</p>
+      <a href="#" class="btn btn-outline-dark" onclick="loadPage('team.html')">Meet Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- Extra Styling -->
+<style>
+  .hero-section .carousel-item {
+    height: 90vh;
+    min-height: 500px;
+    background-color: #000;
+    position: relative;
+  }
+
+  .hero-section .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  .hero-section .carousel-caption {
+    bottom: 20%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .hero-section .carousel-caption h2,
+  .hero-section .carousel-caption p {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section .carousel-caption {
+      bottom: 10%;
+      padding: 1rem;
+    }
+
+    .hero-section .carousel-caption h2 {
+      font-size: 1.5rem;
+    }
+
+    .hero-section .carousel-caption p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
