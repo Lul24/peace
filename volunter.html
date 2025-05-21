@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer | Thon Met Peace Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #0066cc, #004d99);
+    }
+    
+    .volunteer-cta {
+      padding: 5rem 1.5rem;
+      text-align: center;
+      color: white;
+    }
+    
+    .volunteer-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+    
+    .volunteer-form h2 {
+      font-weight: 700;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    textarea {
+      min-height: 120px;
+    }
+    
+    .btn-volunteer {
+      display: inline-block;
+      background-color: transparent;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-volunteer:hover {
+      transform: translateY(-4px);
+      background-color: white;
+      color: #0066cc;
+    }
+    
+    .btn-submit {
+      background-color: #0066cc;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-submit:hover {
+      background-color: #004d99;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Call to Action with improved design -->
+  <section class="volunteer-cta gradient-bg">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Be Part of the Change</h2>
+      <p class="mb-8 text-lg">Your support helps us reach more communities and transform lives. Join us in making a difference today.</p>
+      <div class="flex justify-center">
+        <a href="#volunteer-form" class="btn-volunteer">Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Form Section -->
+  <section class="py-12 px-6" id="volunteer-form">
+    <div class="volunteer-form">
+      <h2>Join Our Volunteer Team</h2>
+      <form action="https://formsubmit.co/info@thonmetpeace.gmail.com" method="POST">
+
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="availability">Availability</label>
+          <select id="availability" name="availability" required>
+            <option value="">Select your availability</option>
+            <option value="weekdays">Weekdays</option>
+            <option value="weekends">Weekends</option>
+            <option value="both">Both Weekdays and Weekends</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="skills">Skills & Expertise</label>
+          <select id="skills" name="skills" required>
+            <option value="">Select your primary skill</option>
+            <option value="education">Education & Tutoring</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="administration">Administration</option>
+            <option value="fundraising">Fundraising</option>
+            <option value="marketing">Marketing & Communications</option>
+            <option value="it">IT & Technical Support</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Why You Want to Volunteer</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        
+        <div class="text-center">
+          <button type="submit" class="btn-submit">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

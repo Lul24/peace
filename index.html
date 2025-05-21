@@ -2,196 +2,428 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thon Met Peace Foundation</title>
-  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thon Met African Peace Foundation,Inc</title>
+  <link rel="icon" href="images/logo.jpg" type="image/png" />
+  
 
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("hidden");
+    }
+  
+    // Optional: Click outside to close
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById("dropdownMenu");
+      if (!menu.parentElement.contains(e.target)) {
+        menu.classList.add("hidden");
+      }
+    });
+  </script>
+  
   <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out;
+    }
+    
+    /* Custom fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
     }
-
-    .navbar {
-      background-color: #002B5B;
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
     }
-
-    .navbar-brand img {
-      height: 45px;
-      border-radius: 6px;
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
     }
-
-    .navbar-brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1.2;
+    
+    .hover-grow {
+      transition: transform 0.3s ease;
     }
-
-    .navbar-brand-text span {
-      font-weight: 700;
-      color: #ffcc00;
-    }
-
-    .navbar-brand-text small {
-      font-size: 0.75rem;
-      color: #fff;
-    }
-
-    .navbar-toggler {
-      border: none;
-      color: #fff;
-      font-size: 1.4rem;
-    }
-
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      margin-left: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00 !important;
-    }
-
-    .footer {
-      background-color: #002B5B;
-      color: white;
-      padding: 1.5rem 0;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 1.3rem;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #ffcc00;
-    }
-
-    .aos-item {
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out;
-    }
-
-    .aos-animate {
-      opacity: 1 !important;
+    
+    .hover-grow:hover {
+      transform: scale(1.03);
     }
   </style>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-gray-50">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadPage('home.html')">
-        <img src="images/logo.JPG" alt="Logo" class="me-2">
-        <div class="navbar-brand-text">
-          <span>THON MET</span>
-          <small>AFRICA PEACE FOUNDATION, INC</small>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('home.html')">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('team.html')">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('fundraising.html')">Fundraising</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('events.html')">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('gallery.html')">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('donate.html')">Donate</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('contacts.html')">Contact</a></li>
-        </ul>
+
+<!-- Header -->
+<header class="bg-blue-600 shadow sticky top-0 z-50" x-data="{ open: false }">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <a href="#" class="flex items-center space-x-3">
+      <img src="images/logo.jpg" alt="Logo" class="h-14 w-14 rounded-full">
+      <div>
+        <span class="block text-lg font-bold text-white">THON MET</span>
+        <span class="block text-sm text-blue-100">AFRICAN PEACE FOUNDATION, INC</span>
       </div>
-    </div>
-  </nav>
+    </a>
 
-  <!-- Dynamic Content -->
-  <div id="content" class="container my-5">
-    <div data-aos="fade-up" class="aos-item">
-      <h1 class="text-center">Welcome to Thon Met Peace Foundation,Inc</h1>
-      <p class="lead text-center">Empowering communities through education, healthcare, and peace.</p>
-    </div>
+    <nav class="hidden md:flex space-x-6 text-lg font-mono">
+      <a href="#about" class="text-white hover:text-yellow-300 transition">About Us</a>
+      <a href="team.html" class="text-white hover:text-yellow-300 transition">Team</a>
+      <a href="fundraising.html" class="text-white hover:text-yellow-300 transition">Fundraising</a>
+      <a href="events.html" class="text-white hover:text-yellow-300 transition">Events</a>
+      <a href="gallery.html" class="text-white hover:text-yellow-300 transition">Gallery</a>
+      <a href="donate.html" class="text-white hover:text-yellow-300 transition">Donate</a>
+      <a href="contacts.html" class="text-white hover:text-yellow-300 transition">Contact</a>
+    </nav>
+
+    <button @click="open = !open" class="md:hidden text-2xl text-white focus:outline-none">
+      <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
+    </button>
   </div>
 
-  <!-- Footer -->
-  <!-- Footer -->
-<footer class="footer text-center">
-  <div class="container">
-    <p class="mb-2">Follow Us</p>
-    <div class="social-icons mb-3">
-      <a href="https://m.facebook.com/thakolmet/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/thonmet" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/thonmet" target="_blank"><i class="fab fa-instagram"></i></a>
+  <div x-show="open" @click.away="open = false" class="md:hidden bg-blue-600 shadow-lg">
+    <nav class="flex flex-col space-y-2 py-4 px-6 text-sm font-semibold">
+      <a href="#about" class="text-white hover:text-yellow-300 transition">About Us</a>
+      <a href="team.html" class="text-white hover:text-yellow-300 transition">Team</a>
+      <a href="fundraising.html" class="text-white hover:text-yellow-300 transition">Fundraising</a>
+      <a href="events.html" class="text-white hover:text-yellow-300 transition">Events</a>
+      <a href="gallery.html" class="text-white hover:text-yellow-300 transition">Gallery</a>
+      <a href="donate.html" class="text-white hover:text-yellow-300 transition">Donate</a>
+      <a href="contacts.html" class="text-white hover:text-yellow-300 transition">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Hero Section with Fixed Slider -->
+<section x-data="{
+  currentSlide: 0,
+  slides: [
+    {
+      image: 'images/education.jpg',
+      title: 'Empowering Education',
+      description: 'Providing learning opportunities to underprivileged children across rural regions..'
+    },
+    
+    {
+      image: 'images/slider3.jpg',
+      title: 'Sustainable Development',
+      description: 'Supporting initiatives that promote long-term economic and environmental stability.'
+    }
+  ],
+  init() {
+    setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 5000);
+  }
+}" 
+x-init="init"
+class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- Background Slides -->
+  <template x-for="(slide, index) in slides" :key="index">
+    <div 
+      :style="`background-image: url(${slide.image})`"
+      class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+      :class="{'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index}">
     </div>
-    <p class="mb-1">&copy; 2014 Thon Met Peace Foundation, Inc. All rights reserved.</p>
-    <p class="mb-0">
-      Developed by Stanley S. Garyeazohn 
-      (<a href="mailto:garyeazohns@gmail.com" class="text-white text-decoration-underline">garyeazohns@gmail.com</a>) 
-      &amp; Lul Gatwech 
-      (<a href="mailto:lulgatwech24@gmail.com" class="text-white text-decoration-underline">lulgatwech24@gmail.com</a>)
-    </p>
+  </template>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+  <!-- Slider Content -->
+  <div class="relative z-20 max-w-2xl px-4 animate-fadeIn">
+    <template x-for="(slide, index) in slides" :key="index">
+      <div 
+        x-show="currentSlide === index"
+        x-transition:enter="transition ease-out duration-1000"
+        x-transition:enter-start="opacity-0 transform translate-y-12"
+        x-transition:enter-end="opacity-100 transform translate-y-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" x-text="slide.title"></h1>
+        <p class="mb-6 text-lg md:text-xl" x-text="slide.description"></p>
+        <a href="#about" class="inline-block bg-yellow-400 text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition transform hover:-translate-y-1">Learn More</a>
+      </div>
+    </template>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button @click="currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1"
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-3 text-gray-800 transition z-20 focus:outline-none">
+    <i class="fas fa-chevron-left text-xl"></i>
+  </button>
+
+  <button @click="currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1"
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-3 text-gray-800 transition z-20 focus:outline-none">
+    <i class="fas fa-chevron-right text-xl"></i>
+  </button>
+
+  <!-- Indicators -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+    <template x-for="(slide, index) in slides" :key="index">
+      <button @click="currentSlide = index"
+              :class="{'w-10 bg-yellow-400': currentSlide === index, 'w-3 bg-gray-300': currentSlide !== index}"
+              class="h-3 rounded-full transition-all duration-300 focus:outline-none"></button>
+    </template>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About <span class="text-blue-600">Thon Met</span></h2>
+      <div class="w-24 h-1 bg-yellow-400 mx-auto"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="images/s1.jpg" alt="About Thon Met" class="rounded-lg shadow-xl w-full h-auto object-cover hover-grow">
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-gray-800">Our Mission</h3>
+        <p class="text-gray-600 leading-relaxed"><p>Thon Met African Peace Foundation, Inc. is a grassroots nonprofit organization committed to uplifting South Sudanese refugee communities through targeted initiatives that address the root causes of poverty and underdevelopment. Our work spans education, healthcare, clean drinking water, and agriculture, aiming to create a comprehensive impact.</p>
+        
+        <h3 class="text-2xl font-semibold text-gray-800">Who We Are?</h3>
+        <p class="text-gray-600 leading-relaxed"><p>At the Thon Met African Peace Foundation, Inc., we are dedicated to supporting South Sudanese refugees who have been forced to flee their homes and find themselves in some of the most vulnerable refugee camps in South Sudan, Ethiopia, Sudan, and Kenya. Our mission is rooted in compassion and respect for all individuals, driven by the heartfelt belief that everyone deserves the opportunity to live a life filled with safety, hope, and the chance to thrive.
+
+We understand South Sudanese refugees' struggles poverty, displacement, conflict, and barriers to essential services and we are here to help. Our work goes beyond merely providing immediate relief; we strive to empower individuals, restore their dignity, and build a foundation for a more just and sustainable future. <br>
+
+<br>Through meaningful partnerships and active community involvement, we provide vital resources such as food security, access to clean water, healthcare, education, and transportation. We listen closely to the needs of the communities we serve and adapt our methods to ensure their voices are heard and prioritized in our initiatives.
+
+Together, we are committed to nurturing resilient communities and uplifting lives, one small step at a time, guided by empathy and a shared commitment to a brighter future.</p>
+        <h3 class="text-2xl font-semibold text-gray-800">Our Impact</h3>
+        <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">10+</span>
+            <span class="text-gray-500">Communities</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">150</span>
+            <span class="text-gray-500">People Helped</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">12</span>
+            <span class="text-gray-500">Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs Section with improved design -->
+<section class="py-20 px-6 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Programs</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">Through our diverse initiatives, we address key challenges facing African communities and work toward sustainable solutions.</p>
+      <div class="w-24 h-1 bg-yellow-400 mx-auto mt-6"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-grow">
+        <div class="h-3 bg-blue-500"></div>
+        <div class="p-8 text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-500 mb-6">
+            <i class="fas fa-book text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Education</h3>
+          <p class="text-gray-600">Empowering youth through access to quality education, learning resources, and scholarship programs for underprivileged students.</p>
+          
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-grow">
+        <div class="h-3 bg-red-500"></div>
+        <div class="p-8 text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-500 mb-6">
+            <i class="fas fa-heartbeat text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Healthcare</h3>
+          <p class="text-gray-600">Providing essential medical services, health education, and promoting wellness practices in rural and underserved communities.</p>
+         
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-grow">
+        <div class="h-3 bg-green-500"></div>
+        <div class="p-8 text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-6">
+            <i class="fas fa-seedling text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Sustainability</h3>
+          <p class="text-gray-600"><p>We focus on enhancing water access, conserving biodiversity, and promoting sustainable agriculture for South Sudanese refugee families in the Gambella region.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action with improved design -->
+<section class="py-20 gradient-bg text-center text-white px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Be Part of the Change</h2>
+    <p class="mb-8 text-lg">Your support helps us reach more communities and transform lives. Join us in making a difference today.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="donate.html" class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">Donate Now</a>
+      <a href="volunter.html" class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-blue-600 transition transform hover:-translate-y-1">Volunteer</a>
+      <a href="product.html" class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-blue-600 transition transform hover:-translate-y-1">Shop</a>
+    </div>
+    
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <h4 class="text-3xl font-bold">100%</h4>
+        <p class="text-sm mt-1">Transparency</p>
+      </div>
+      <div>
+        <h4 class="text-3xl font-bold">20+</h4>
+        <p class="text-sm mt-1">Volunteers</p>
+      </div>
+      <div>
+        <h4 class="text-3xl font-bold">4</h4>
+        <p class="text-sm mt-1">Countries</p>
+      </div>
+      <div>
+        <h4 class="text-3xl font-bold">10+</h4>
+        <p class="text-sm mt-1">Partners</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer with improved design -->
+<footer class="bg-gray-900 text-gray-400 py-12 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+    <div class="space-y-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/logo.jpg" alt="Logo" class="h-10 w-10 rounded-full">
+        <div>
+          <span class="block text-lg font-bold text-white">THON MET</span>
+          <span class="block text-xs">AFRICAN PEACE FOUNDATION,INC</span>
+        </div>
+      </div>
+      <p class="text-sm">Dedicated to fostering peace, education, and sustainable development across African communities.</p>
+    </div>
+    
+    <div>
+      <h4 class="text-white font-bold mb-4 text-lg">Contact Us</h4>
+      <ul class="space-y-2 text-sm">
+        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i> PO Box 113198<br>Stamford, CT 06901</li>
+        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-blue-400"></i> <a href="mailto:info@thonmetpeace.gmail.com" class="hover:text-white transition">info@thonmetpeace.gmail.com</a></li>
+        <li class="flex items-center"><i class="fas fa-phone mr-3 text-blue-400"></i> <a href="tel:+12345678900" class="hover:text-white transition">+01-914-335-1308</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#about" class="hover:text-white transition"><i class="fas fa-chevron-right mr-2 text-xs"></i>About Us</a></li>
+        <!-- Add this inside your <nav> or menu container -->
+<li class="relative">
+  <button onclick="toggleDropdown()" class="flex items-center hover:text-white transition">
+    <i class="fas fa-chevron-right mr-2 text-xs"></i>Our Programs
+    <i class="fas fa-chevron-down ml-1 text-xs"></i>
+  </button>
+  <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-white text-black rounded shadow-lg z-50">
+    <li><a href="education.html" class="block px-4 py-2 hover:bg-blue-500 hover:text-white transition">Education (Mandatory)</a></li>
+    <li><a href="#agriculture" class="block px-4 py-2 hover:bg-blue-500 hover:text-white transition">Agriculture</a></li>
+    <li><a href="#refugee-transport" class="block px-4 py-2 hover:bg-blue-500 hover:text-white transition">Refugee Transport for Displaced Families</a></li>
+    <li><a href="#health" class="block px-4 py-2 hover:bg-blue-500 hover:text-white transition">Health and Sanitation</a></li>
+    <li><a href="#water-access" class="block px-4 py-2 hover:bg-blue-500 hover:text-white transition">Water Access and Clean Drinking Initiatives</a></li>
+  </ul>
+</li>
+
+        <li><a href="donate.html" class="hover:text-white transition"><i class="fas fa-chevron-right mr-2 text-xs"></i>Donate</a></li>
+        <li><a href="volunter.html" class="hover:text-white transition"><i class="fas fa-chevron-right mr-2 text-xs"></i>Volunteer</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+      <div class="flex space-x-4 mb-6">
+        <a href="https://m.facebook.com/thakolmet/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/thonmet" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/thonmetpeace" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@thon.met.peace?_t=ZT-8vX6VbRH8aE&_r=1" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p class="text-sm">Follow us on social media for updates and news about our work.</p>
+    </div>
+  </div>
+  
+<div class="max-w-6xl mx-auto border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+  <div class="text-sm">&copy; 2025 Thon Met African Peace Foundation, Inc. All rights reserved.</div>
+  <div class="flex space-x-6 text-xs mt-4 md:mt-0">
+    <a href="https://www.termsfeed.com/live/e42402b6-3eb7-4b9e-acb1-8ba8df272cf0" target="_blank" class="hover:text-white transition">Privacy Policy</a>
+    <a href="https://www.termsfeed.com/live/b9f11902-89f8-415d-a687-4cb8a7d102b4" class="hover:text-white transition">Terms of Service</a>
+  </div>
+</div>
+
   </div>
 </footer>
 
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition focus:outline-none z-50 opacity-0" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-
-    function loadPage(page) {
-      fetch(page)
-        .then(response => {
-          if (!response.ok) throw new Error(`Error: ${response.status}`);
-          return response.text();
-        })
-        .then(data => {
-          const temp = document.createElement('div');
-          temp.innerHTML = data;
-
-          const scripts = temp.querySelectorAll('script');
-          scripts.forEach(oldScript => {
-            const newScript = document.createElement('script');
-            if (oldScript.src) newScript.src = oldScript.src;
-            else newScript.textContent = oldScript.textContent;
-            document.body.appendChild(newScript);
-          });
-
-          document.getElementById('content').innerHTML = temp.innerHTML;
-          AOS.refresh();
-        })
-        .catch(error => {
-          document.getElementById('content').innerHTML = `
-            <div class="alert alert-danger mt-5 text-center">
-              <h4>Failed to load page</h4>
-              <p>${error.message}</p>
-            </div>`;
-          console.error(error);
-        });
+<script>
+  // Back to top functionality
+  window.onscroll = function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopButton.style.opacity = '1';
+    } else {
+      backToTopButton.style.opacity = '0';
     }
+  };
+  
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
-    window.onload = () => loadPage('home.html');
-  </script>
 </body>
 </html>
